@@ -1,0 +1,9 @@
+android 4.4 kitkat
+android 5.0 lollipop
+android 6 marshmallow
+android 7 nougat
+android 8 oreo
+android 9 pie
+nokia 7 plus
+samsung galaxy note 4
+my whole new world
