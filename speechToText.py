@@ -1,6 +1,6 @@
 import speech_recognition as sr
 
-def stt(input_source, audioFile = None):
+def stt(input_source):
     r = sr.Recognizer()
 
     try:
@@ -11,14 +11,17 @@ def stt(input_source, audioFile = None):
                 text = r.recognize_amazon(audio).lower()
                 print(text)
         
-        else:
-            if(audioFile):
-                file = sr.AudioFile('voice.wav')
-                audio = r.record(file)
-                text = r.recognize_google(audio)
-                print(text)
-            else:
-                print('no input audio file')
-                
+        else:            
+            try:
+                file = input('Enter path to file: ')
+                with sr.AudioFile(file) as audioFile:
+                    audio = r.record(audioFile)
+                    text = r.recognize_google(audio)
+                    print(text)
+            except ValueError as ve:
+                print('not supported format')
+            except Exception as e:
+                print('no input audio file', e.args)
+
     except Exception as e:
-        print('error:',e.args)
+        print('error:', e.args)

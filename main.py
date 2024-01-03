@@ -44,9 +44,8 @@ while True:
             if(c == 0):
                 os.system('cls')                
                 break
-            if(c == 1):
-                file = input('Enter path to file: ')
-                
+            if(c == 1):        
+                stt('file2')
 
             if(c == 2):
                 print('Open mic to speak: ')
